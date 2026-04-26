@@ -1022,7 +1022,7 @@
         "meta.mapping.key"
       ],
       "settings": {
-        "foreground": "#bab886"
+        "foreground": "#a897a6"
       }
     },
     {
@@ -1033,7 +1033,7 @@
         "entity.name.table.toml"
       ],
       "settings": {
-        "foreground": "#bab886"
+        "foreground": "#a897a6"
       }
     },
 
