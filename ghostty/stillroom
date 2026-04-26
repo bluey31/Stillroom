@@ -1,0 +1,37 @@
+# Stillroom — Ghostty terminal theme
+#
+# Install:
+#   cp this file to ~/.config/ghostty/themes/stillroom
+#   then add `theme = stillroom` to ~/.config/ghostty/config
+#
+# macOS alternate location:
+#   ~/Library/Application Support/com.mitchellh.ghostty/themes/
+
+background = 211e1c
+foreground = d4cec8
+
+cursor-color = bab886
+cursor-text  = 211e1c
+
+selection-background = 46413d
+selection-foreground = d4cec8
+
+# ANSI 0–7
+palette = 0=#12100f  # crust
+palette = 1=#c8716a  # madder
+palette = 2=#9bb596  # eucalyptus
+palette = 3=#bab886  # lichen
+palette = 4=#8ba5aa  # blue-grey glaze
+palette = 5=#a897a6  # dried petal
+palette = 6=#8ab3ad  # verdigris
+palette = 7=#bcb4b0  # subtxt 1
+
+# ANSI 8–15
+palette = 8=#807b77  # ovly 1
+palette = 9=#d08a6e  # terracotta
+palette = 10=#cad2c5 # chalk
+palette = 11=#c0b490 # ecru
+palette = 12=#9ba8c2 # slate
+palette = 13=#b4a5dc # damson
+palette = 14=#8da8a4 # pewter
+palette = 15=#d4cec8 # text

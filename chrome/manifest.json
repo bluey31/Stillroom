@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "version": "1.0.4",
+  "name": "Stillroom",
+  "short_name": "Stillroom",
+  "description": "A warm dark theme — natural dyes on warm ink.",
+
+  "theme": {
+    "colors": {
+      "frame":                        [18, 16, 15],
+      "frame_inactive":               [18, 16, 15],
+      "frame_incognito":              [18, 16, 15],
+      "frame_incognito_inactive":     [18, 16, 15],
+
+      "toolbar":                      [26, 23, 21],
+
+      "tab_text":                     [212, 206, 200],
+      "tab_background_text":          [168, 159, 155],
+      "tab_background_text_inactive": [128, 123, 119],
+      "tab_background_text_incognito": [168, 159, 155],
+      "tab_background_text_incognito_inactive": [128, 123, 119],
+
+      "bookmark_text":                [212, 206, 200],
+      "toolbar_button_icon":          [210, 206, 185],
+
+      "ntp_background":               [33, 30, 28],
+      "ntp_text":                     [212, 206, 200],
+      "ntp_link":                     [125, 149, 179],
+      "ntp_header":                   [168, 166, 96],
+
+      "button_background":            [51, 47, 44],
+
+      "omnibox_background":           [51, 47, 44],
+      "omnibox_text":                 [212, 206, 200]
+    },
+
+    "tints": {
+      "buttons":         [-1, -1, -1],
+      "frame":           [-1, -1, -1],
+      "background_tab":  [-1, -1, -1]
+    },
+
+    "properties": {
+      "ntp_background_alignment": "center"
+    }
+  }
+}

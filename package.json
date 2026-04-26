@@ -1,0 +1,33 @@
+{
+  "name": "stillroom",
+  "displayName": "Stillroom",
+  "description": "A warm dark theme — natural dyes on warm ink. Built for Python, MONAI, and the quieter side of the terminal.",
+  "version": "1.0.4",
+  "publisher": "stillroom",
+  "license": "MIT",
+  "galleryBanner": {
+    "color": "#211e1c",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": ["Themes"],
+  "keywords": [
+    "dark theme",
+    "warm",
+    "earthy",
+    "python",
+    "apothecary",
+    "natural dye"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Stillroom",
+        "uiTheme": "vs-dark",
+        "path": "./themes/stillroom-color-theme.json"
+      }
+    ]
+  }
+}
