@@ -739,6 +739,20 @@
       }
     },
     {
+      "name": "Docstrings (subtext)",
+      "scope": [
+        "string.quoted.docstring",
+        "string.quoted.docstring.multi",
+        "string.quoted.docstring.multi.python",
+        "string.quoted.docstring.python",
+        "punctuation.definition.string.begin.python",
+        "punctuation.definition.string.end.python"
+      ],
+      "settings": {
+        "foreground": "#6d6864"
+      }
+    },
+    {
       "name": "F-string / template interpolation contents",
       "scope": [
         "meta.embedded.line",
