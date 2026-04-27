@@ -24,7 +24,7 @@ These six pigments appear in the VS Code syntax map and carry the semantic weigh
 | ---------------- | --------- | --------------------------------------------------- |
 | clay             | #c9a99d | decorators, imports, f-string braces, `self`, `cls` |
 | petal            | #a897a6 | types, annotations, class references                |
-| glaze            | #8ba5aa | functions, methods, callables, property definitions  |
+| woad             | #7d95b3 | 215° | older indigo-blue, cooler than the current callable blue |
 | eucalyptus       | #9bb596 | strings, docstrings, regex                          |
 | ember            | #c29070 | numbers, booleans, `None`, `null`, `undefined`       |
 | madder           | #c8716a | errors, exceptions, warnings                        |
@@ -39,7 +39,7 @@ These pigments are defined, named, and available for future surfaces (Chrome tab
 | chalk     | #cad2c5 | 125° | off-white, cool-green tint          |
 | verdigris | #8ab3ad | 175° | oxidised copper, teal               |
 | pewter    | #8da8a4 | 190° | old tin, storm lantern glass        |
-| woad      | #7d95b3 | 215° | older indigo-blue, cooler than the current callable blue |
+| glaze     | #8ba5aa | ---- | light blue glaze                    |
 | slate     | #9ba8c2 | 225° | weathered slate roof, dusty blue    |
 | ecru      | #c0b490 | 48°  | parchment straw, warm buff          |
 | damson    | #b4a5dc | 255° | original plum-lavender, cooler than the current type lane |

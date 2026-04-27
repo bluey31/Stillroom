@@ -617,7 +617,7 @@
         "support.function"
       ],
       "settings": {
-        "foreground": "#8ba5aa"
+        "foreground": "#7d95b3"
       }
     },
     {
@@ -628,7 +628,7 @@
         "variable.function"
       ],
       "settings": {
-        "foreground": "#8ba5aa"
+        "foreground": "#7d95b3"
       }
     },
     {
@@ -639,7 +639,7 @@
         "meta.method entity.name.function"
       ],
       "settings": {
-        "foreground": "#8ba5aa"
+        "foreground": "#7d95b3"
       }
     },
     {
@@ -649,7 +649,7 @@
         "support.function.builtin.python"
       ],
       "settings": {
-        "foreground": "#8ba5aa"
+        "foreground": "#7d95b3"
       }
     },
 
@@ -1102,14 +1102,14 @@
     "property": "#c8c1a5",
     "property.readonly": "#c29070",
     "property.static": "#c29070",
-    "property.declaration": "#8ba5aa",
+    "property.declaration": "#7d95b3",
 
-    "function": "#8ba5aa",
-    "function.defaultLibrary": "#8ba5aa",
-    "function.declaration": "#8ba5aa",
-    "method": "#8ba5aa",
-    "method.declaration": "#8ba5aa",
-    "method.defaultLibrary": "#8ba5aa",
+    "function": "#7d95b3",
+    "function.defaultLibrary": "#7d95b3",
+    "function.declaration": "#7d95b3",
+    "method": "#7d95b3",
+    "method.declaration": "#7d95b3",
+    "method.defaultLibrary": "#7d95b3",
 
     "class": "#a897a6",
     "class.declaration": "#a897a6",
