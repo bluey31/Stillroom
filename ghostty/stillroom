@@ -10,7 +10,7 @@
 background = 211e1c
 foreground = d4cec8
 
-cursor-color = bab886
+cursor-color = afad78
 cursor-text  = 211e1c
 
 selection-background = 46413d
@@ -20,7 +20,7 @@ selection-foreground = d4cec8
 palette = 0=#12100f
 palette = 1=#c8716a
 palette = 2=#9bb596
-palette = 3=#bab886
+palette = 3=#afad78
 palette = 4=#8ba5aa
 palette = 5=#a897a6
 palette = 6=#8ab3ad

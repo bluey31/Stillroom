@@ -1,4 +1,4 @@
-#1a1715,#12100f,#d4cec8,#211e1c,#46413d,#d4cec8,#9bb596,#bab886
+#1a1715,#12100f,#d4cec8,#211e1c,#46413d,#d4cec8,#9bb596,#afad78
 
 # Stillroom — Slack Theme
 

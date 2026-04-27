@@ -8,7 +8,7 @@ Warm ink · natural dyes · calibrated for code.
 
 | Pigment | Hex       | Role                          |
 | ------- | --------- | ----------------------------- |
-| lichen  | #bab886 | keywords (class, def, for, in, return) |
+| lichen  | #afad78 | keywords (class, def, for, in, return) |
 
 The dyer's garden pressed into yellow-green. Every keyword draws its pigment from this pot. If someone sees a single screenshot of Stillroom, this is the color they'll remember.
 

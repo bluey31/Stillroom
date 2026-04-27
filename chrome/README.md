@@ -73,7 +73,7 @@ than part of the bar itself.
 | ntp background   | base      | `#211e1c` |
 | ntp text         | text      | `#d4cec8` |
 | ntp link         | woad      | `#7d95b3` |
-| ntp header       | lichen    | `#bab886` |
+| ntp header       | lichen    | `#afad78` |
 
 Matches the VS Code editor background exactly — opening a new tab should
 feel continuous with your editor, not like a different surface.
