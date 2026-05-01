@@ -1,4 +1,5 @@
-"""Patient encoder — transforms clinical records into model-ready tensors.
+"""
+Patient encoder — transforms clinical records into model-ready tensors.
 
 A preview file for the Stillroom palette, exercising every pigment across
 common Python surfaces: imports, types, decorators, dataclasses, f-strings,

@@ -10,7 +10,7 @@
 background = 211e1c
 foreground = d4cec8
 
-cursor-color = afad78
+cursor-color = c4bd6e
 cursor-text  = 211e1c
 
 selection-background = 46413d
@@ -19,8 +19,8 @@ selection-foreground = d4cec8
 # ANSI 0–7
 palette = 0=#12100f
 palette = 1=#c8716a
-palette = 2=#9bb596
-palette = 3=#afad78
+palette = 2=#a8c49a
+palette = 3=#c4bd6e
 palette = 4=#7d95b3
 palette = 5=#a897a6
 palette = 6=#8ab3ad

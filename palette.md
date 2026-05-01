@@ -8,7 +8,7 @@ Warm ink · natural dyes · calibrated for code.
 
 | Pigment | Hex       | Role                          |
 | ------- | --------- | ----------------------------- |
-| lichen  | #afad78 | keywords (class, def, for, in, return) |
+| lichen  | #c4bd6e | keywords (class, def, for, in, return) |
 
 The dyer's garden pressed into yellow-green. Every keyword draws its pigment from this pot. If someone sees a single screenshot of Stillroom, this is the color they'll remember.
 
@@ -22,10 +22,10 @@ These six pigments appear in the VS Code syntax map and carry the semantic weigh
 
 | Pigment          | Hex       | Role                                                |
 | ---------------- | --------- | --------------------------------------------------- |
-| clay             | #c9a99d | decorators, imports, f-string braces, `self`, `cls` |
+| clay             | #d4a894 | decorators, imports, f-string braces, `self`, `cls` |
 | petal            | #a897a6 | types, annotations, class references                |
 | woad             | #7d95b3 | 215° | older indigo-blue, cooler than the current callable blue |
-| eucalyptus       | #9bb596 | strings, docstrings, regex                          |
+| eucalyptus       | #a8c49a | strings, docstrings, regex                          |
 | ember            | #c29070 | numbers, booleans, `None`, `null`, `undefined`       |
 | madder           | #c8716a | errors, exceptions, warnings                        |
 
