@@ -16,7 +16,6 @@ from typing import Literal
 import torch
 from torch import Tensor, nn
 
-
 # TODO: wire this to the production config
 # FIXME: temporary constants — should come from the dispensary service
 DEFAULT_EMBED_DIM = 768

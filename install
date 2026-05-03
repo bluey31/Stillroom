@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+# Stillroom — symlink themes into VS Code, Zed, and Ghostty.
+#
+# Idempotent: re-running replaces existing symlinks. Edits in this repo are
+# picked up live (no copy step) — restart the target app to see them.
+
+set -euo pipefail
+
+REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+VERSION="$(awk -F'"' '/"version":/ {print $4; exit}' "$REPO/package.json")"
+
+if [[ -z "$VERSION" ]]; then
+  echo "error: could not read version from package.json" >&2
+  exit 1
+fi
+
+# ── VS Code ──────────────────────────────────────────────────────────────────
+# Do not touch ~/.vscode/extensions/extensions.json — VS Code rebuilds that
+# index lazily and removing it can leave other installed extensions
+# unregistered until they're reinstalled.
+VSCODE_EXT="$HOME/.vscode/extensions"
+mkdir -p "$VSCODE_EXT"
+
+TARGET="$VSCODE_EXT/stillroom.stillroom-$VERSION"
+
+# Remove the prior Stillroom symlink/dir (this version only). Use -f so we
+# never recurse into directories we don't own.
+if [[ -L "$TARGET" ]]; then
+  rm -f "$TARGET"
+elif [[ -d "$TARGET" ]]; then
+  rm -rf "$TARGET"
+fi
+
+ln -s "$REPO" "$TARGET"
+echo "VS Code   → $TARGET"
+
+# ── Zed ──────────────────────────────────────────────────────────────────────
+ZED_THEMES="$HOME/.config/zed/themes"
+mkdir -p "$ZED_THEMES"
+ln -sfn "$REPO/zed/themes/stillroom.json" "$ZED_THEMES/stillroom.json"
+echo "Zed       → $ZED_THEMES/stillroom.json"
+
+# ── Ghostty ──────────────────────────────────────────────────────────────────
+GHOSTTY_THEMES="$HOME/.config/ghostty/themes"
+mkdir -p "$GHOSTTY_THEMES"
+ln -sfn "$REPO/ghostty/stillroom" "$GHOSTTY_THEMES/stillroom"
+echo "Ghostty   → $GHOSTTY_THEMES/stillroom"
+
+echo
+echo "Done. Restart each app, then select 'Stillroom' from its theme picker."
