@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
-  "version": "1.0.4",
+  "version": "1.0.0",
   "name": "Stillroom",
   "short_name": "Stillroom",
-  "description": "A warm dark theme — natural dyes on warm ink.",
+  "description": "A warm dark theme — natural dyes and warm stone.",
 
   "theme": {
     "colors": {

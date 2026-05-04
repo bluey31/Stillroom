@@ -1,10 +1,19 @@
 {
   "name": "stillroom",
   "displayName": "Stillroom",
-  "description": "A warm dark theme — natural dyes on warm ink. Built for Python, MONAI, and the quieter side of the terminal.",
-  "version": "1.0.4",
-  "publisher": "stillroom",
+  "description": "A theme inspired by natural dyes and warm stone. Calibrated for a grounding developer experience.",
+  "version": "1.0.0",
+  "publisher": "bluey31",
   "license": "MIT",
+  "icon": "assets/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bluey31/Stillroom.git"
+  },
+  "homepage": "https://github.com/bluey31/Stillroom",
+  "bugs": {
+    "url": "https://github.com/bluey31/Stillroom/issues"
+  },
   "galleryBanner": {
     "color": "#211e1c",
     "theme": "dark"
@@ -17,16 +26,20 @@
     "dark theme",
     "warm",
     "earthy",
-    "python",
-    "apothecary",
-    "natural dye"
+    "natural dye",
+    "lichen",
+    "woad",
+    "madder",
+    "eucalyptus",
+    "terracotta",
+    "apothecary"
   ],
   "contributes": {
     "themes": [
       {
         "label": "Stillroom",
         "uiTheme": "vs-dark",
-        "path": "./themes/stillroom-color-theme.json"
+        "path": "./vscode/themes/stillroom-color-theme.json"
       }
     ]
   }

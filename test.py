@@ -1,9 +1,5 @@
 """
-Patient encoder — transforms clinical records into model-ready tensors.
-
-A preview file for the Stillroom palette, exercising every pigment across
-common Python surfaces: imports, types, decorators, dataclasses, f-strings,
-exceptions, match statements, and nn.Module subclassing.
+Dyebath encoder — transforms apothecary recipes into model-ready tensors.
 """
 
 from __future__ import annotations
@@ -16,41 +12,42 @@ from typing import Literal
 import torch
 from torch import Tensor, nn
 
-# TODO: wire this to the production config
-# FIXME: temporary constants — should come from the dispensary service
-DEFAULT_EMBED_DIM = 768
-MAX_SEQUENCE_LEN = 2048
-ICD_PATTERN = re.compile(r"^[A-Z]\d{2}(\.\d{1,3})?$")
-
-
-class PatientError(Exception):
-    """Raised when a patient record fails validation."""
-
 
 @dataclass(frozen=True)
-class Patient:
-    """A patient record before encoding."""
+class Recipe:
+    """A dyebath recipe before encoding."""
 
-    mrn: str
-    age: int = 0
-    diagnoses: list[str] = field(default_factory=list)
-    active: bool = True
-    sex: Literal["F", "M", "X"] = "X"
+    code: str
+    bath_temp: int = 0
+    mordants: list[str] = field(default_factory=list)
+    repeatable: bool = True
+    fiber: Literal["wool", "silk", "linen", "cotton"] = "wool"
 
     def __post_init__(self) -> None:
-        if not self.mrn.isdigit():
-            raise PatientError(f"mrn must be digits, got {self.mrn!r}")
-        for code in self.diagnoses:
-            if not ICD_PATTERN.match(code):
-                raise PatientError(f"invalid ICD-10 code: {code!r}")
+        if not self.code.startswith("DY-"):
+            raise RecipeError(f"code must start with 'DY-', got {self.code!r}")
+        for mordant in self.mordants:
+            if not MORDANT_PATTERN.match(mordant):
+                raise RecipeError(f"invalid mordant code: {mordant!r}")
 
     @property
-    def severity(self) -> float:
-        return len(self.diagnoses) / 10.0
+    def potency(self) -> float:
+        return len(self.mordants) / 8.0
 
 
-class PatientEncoder(nn.Module):
-    """Encodes a batch of patients into dense embeddings."""
+# TODO: wire this to the production pigment registry
+# FIXME: temporary constants — should come from the dyer's almanac
+DEFAULT_EMBED_DIM = 768
+MAX_SEQUENCE_LEN = 2048
+MORDANT_PATTERN = re.compile(r"^[A-Z]{2}\d{3}(\.\d{1,2})?$")
+
+
+class RecipeError(Exception):
+    """Raised when a recipe fails validation."""
+
+
+class RecipeEncoder(nn.Module):
+    """Encodes a batch of recipes into dense embeddings."""
 
     def __init__(
         self,
@@ -80,45 +77,45 @@ class PatientEncoder(nn.Module):
         return f"{type(self).__name__}(embed_dim={self.embed_dim})"
 
 
-def risk_tier(patient: Patient) -> str:
-    """Classify risk using a match statement."""
-    match patient.severity:
+def colourfastness(recipe: Recipe) -> str:
+    """Classify colourfastness using a match statement."""
+    match recipe.potency:
         case s if s < 0.2:
-            return "low"
+            return "fugitive"
         case s if s < 0.5:
             return "moderate"
         case _:
-            return "high"
+            return "fast"
 
 
-def load_cohort(path: Path) -> list[Patient]:
+def load_almanac(path: Path) -> list[Recipe]:
     if not path.exists():
-        raise FileNotFoundError(f"cohort not found: {path}")
+        raise FileNotFoundError(f"almanac not found: {path}")
 
-    patients: list[Patient] = []
+    recipes: list[Recipe] = []
     for line in path.read_text().splitlines():
         if not line or line.startswith("#"):
             continue
-        mrn, age_str, *codes = line.split("\t")
+        code, temp_str, *mordants = line.split("\t")
         try:
-            patient = Patient(mrn=mrn, age=int(age_str), diagnoses=list(codes))
-        except PatientError as err:
-            print(f"skipping malformed record: {err}")
+            recipe = Recipe(code=code, bath_temp=int(temp_str), mordants=list(mordants))
+        except RecipeError as err:
+            print(f"skipping malformed recipe: {err}")
             continue
-        patients.append(patient)
+        recipes.append(recipe)
 
-    return patients
+    return recipes
 
 
 def main() -> None:
-    cohort = load_cohort(Path("data/cohort.tsv"))
-    encoder = PatientEncoder(embed_dim=512, num_heads=8)
+    almanac = load_almanac(Path("data/almanac.tsv"))
+    encoder = RecipeEncoder(embed_dim=512, num_heads=8)
 
-    print(f"loaded {len(cohort)} patients, encoder={encoder!r}")
+    print(f"loaded {len(almanac)} recipes, encoder={encoder!r}")
 
-    for patient in cohort[:3]:
-        tier = risk_tier(patient)
-        print(f"  mrn={patient.mrn}: tier={tier}")
+    for recipe in almanac[:3]:
+        rating = colourfastness(recipe)
+        print(f"  code={recipe.code}: rating={rating}")
 
     tokens = torch.randint(0, 30_000, (4, 128))
     embeddings = encoder(tokens)

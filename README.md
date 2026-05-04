@@ -1,30 +1,31 @@
 # Stillroom
 
-A warm dark theme for Visual Studio Code. Natural dyes on warm ink — lichen, woad, madder, damson, eucalyptus, terracotta — calibrated for Python, MONAI, and the quieter side of the terminal.
+A theme inspired by natural dyes and warm stone - lichen, woad, madder, damson, eucalyptus, terracotta - calibrated for a grounding developer experience.
 
-## Install
+![Stillroom theme in VS Code — test.py dyebath encoder](assets/code.png)
 
-**Development loop (recommended for trying it out)**
+## The Palette
 
-Clone this repo, open the folder in VS Code, press `F5`. A new Extension Development Host window opens with Stillroom available in the theme picker (`⌘K ⌘T`).
+![palette](assets/palette.png)
 
-**Sideload**
+## Ports
 
-Copy the folder into `~/.vscode/extensions/stillroom/`. If you had a previous version installed, delete `~/.vscode/extensions/extensions.json` before relaunching VS Code so the registry rescans. Pick Stillroom from `Code > Settings > Theme > Color Theme`.
-
-**Package as `.vsix`**
-
-```bash
-npm install -g @vscode/vsce
-vsce package
-code --install-extension stillroom.vsix
-```
+| Surface | Theme |
+| ------- | ----- |
+| VS Code | [`vscode/themes/stillroom-color-theme.json`](vscode/themes/stillroom-color-theme.json) |
+| Zed | [`zed/themes/stillroom.json`](zed/themes/stillroom.json) |
+| Ghostty | [`ghostty/stillroom`](ghostty/stillroom) |
+| Slack | [`slack/slack.md`](slack/slack.md) |
+| Linear | [`linear/linear.md`](linear/linear.md) |
+| Chrome | [`chrome/manifest.json`](chrome/manifest.json) |
 
 ## Variants
 
-Currently a single variant. Future releases may ship under the family:
+Currently a single variant. Future releases are planned to expand the palette and contrast options.
 
 - `Stillroom · Steep` — current, dark.
-- `Stillroom · Decant` — light (planned).
-- `Stillroom · Mordant` — high-contrast (planned).
 
+### Upcoming 
+
+- `Stillroom · Decant` — light.
+- `Stillroom · Mordant` — high-contrast.

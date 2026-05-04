@@ -1,6 +1,6 @@
 # Stillroom — Palette Reference
 
-Warm ink · natural dyes · calibrated for code.
+warm papyrus · natural dyes · calibrated for code.
 
 ---
 
@@ -8,9 +8,9 @@ Warm ink · natural dyes · calibrated for code.
 
 | Pigment | Hex       | Role                                                        |
 | ------- | --------- | ----------------------------------------------------------- |
-| ecru    | #c0b490 | UI accent — cursor, active borders, badges, find match, focus |
+| ecru    | #b3ab92 | UI accent — cursor, active borders, badges, find match, focus |
 
-Parchment straw. Carries the "you are here" weight in the workbench: cursor, active tab indicator, focused panel border, search match, badge fills, progress, primary buttons. Warm-buff rather than yellow-olive — sits beside the warm ink base without competing.
+Parchment straw. Carries the "you are here" weight in the workbench: cursor, active tab indicator, focused panel border, search match, badge fills, progress, primary buttons. Warm-buff rather than yellow-olive — sits beside the warm papyrus base without competing.
 
 **Usage rule:** ecru fills *and* highlights at UI scale. Use it wherever the eye should land first in chrome. Don't use it for syntax — it's tuned to be calm enough for fills, which makes it too quiet for per-token emphasis.
 
@@ -18,7 +18,7 @@ Parchment straw. Carries the "you are here" weight in the workbench: cursor, act
 
 | Pigment | Hex       | Role                                                  |
 | ------- | --------- | ----------------------------------------------------- |
-| lichen  | #c4bd6e | keywords (class, def, for, in, return) |
+| lichen  | #c1bb7f | keywords (class, def, for, in, return) |
 
 The dyer's garden pressed into yellow-green. Every keyword draws its pigment from this pot. If someone sees a single screenshot of Stillroom *code*, this is the color they'll remember.
 
@@ -35,26 +35,23 @@ These pigments appear in the VS Code syntax map and carry the semantic weight of
 | petal      | #b89aac   | types, annotations, class references                               |
 | woad       | #7d95b3   | functions, methods, dict/object keys, links                        |
 | glaze      | #8ba5aa   | decorators, f-string braces, magic methods, structural annotations |
-| eucalyptus | #9ec48f   | strings, docstrings, regex                                         |
+| eucalyptus | #9cb37e   | strings, docstrings, regex                                         |
 | ember      | #c29070   | numbers, booleans, `None`, `null`, escape sequences                |
 | madder     | #c8716a   | errors, exceptions, TODO/FIXME, H1                                 |
 | buff       | #cec4af   | import module names — yellow companion to woad                     |
 
-## Supporting dyes · documented, held in reserve
+## Supporting dyes · ANSI terminal palette
 
-These pigments are defined, named, and available for future surfaces (Chrome tab groups, Slack variants, Linear accents, extended language packs) but do not appear in the current VS Code syntax map. Restraint is deliberate — active syntax is sized at six accents plus lichen plus waxed linen, not fourteen.
+These don't appear in the syntax map, but fill the ANSI lane in terminal surfaces (Ghostty, Zed `terminal.ansi.*`). Each pigment brightens or complements an active dye.
 
-| Pigment    | Hex       | Hue  | Register                                                    |
-| ---------- | --------- | ---- | ----------------------------------------------------------- |
-| frost      | #c8d0d8   | 215° | off-white, cool-blue tint                                 |
-| chalk      | #cad2c5   | 125° | off-white, cool-green tint                                |
-| verdigris  | #8ab3ad   | 175° | oxidised copper, teal                                     |
-| pewter     | #8da8a4   | 190° | old tin, storm lantern glass                              |
-| slate      | #9ba8c2   | 225° | weathered slate roof, dusty blue                          |
-| damson     | #b4a5dc   | 255° | original plum-lavender, cooler than the current type lane |
-| terracotta | #d08a6e   | 20°  | fired clay, brighter rust-orange                          |
-| fig        | #a07a92   | 320° | ripe fig flesh, dusty plum between damson and petal       |
-| clay       | #dba39c   | 20°  | warm pink-peach, original syntax dye for `self`/`cls`     |
+| Pigment    | Hex       | Hue  | Register                                                  | ANSI slot              |
+| ---------- | --------- | ---- | --------------------------------------------------------- | ---------------------- |
+| terracotta | #d08a6e   | 20°  | fired clay, brighter rust-orange                          | `bright_red` (9)       |
+| chalk      | #cad2c5   | 125° | off-white, cool-green tint                                | `bright_green` (10)    |
+| verdigris  | #8ab3ad   | 175° | oxidised copper, teal                                     | `cyan` (6)             |
+| pewter     | #8da8a4   | 190° | old tin, storm lantern glass                              | `bright_cyan` (14)     |
+| slate      | #9ba8c2   | 225° | weathered slate roof, dusty blue                          | `bright_blue` (12)     |
+| damson     | #b4a5dc   | 255° | original plum-lavender, cooler than the current type lane | `bright_magenta` (13)  |
 
 ## The tinted neutral · off the ramp
 
@@ -66,7 +63,7 @@ Not on the neutral ramp — deliberately tinted warm, with a beeswax cast rather
 
 ---
 
-## Neutral ramp · warm ink H345°
+## Neutral ramp · warm papyrus H345°
 
 Twelve stops from crust to text. All sit on the same warm-red-brown axis (H345° LCH, chroma ~1.8). Reads as "walnut, espresso, sepia ink" rather than blue-black or neutral charcoal.
 
@@ -105,7 +102,7 @@ Cross-tool conventions to keep the palette coherent as it expands to new surface
 
 ---
 
-## The base undertone · warm ink
+## The base undertone · warm papyrus
 
 `#211e1c` decomposes to R=33, G=30, B=28 — a strictly descending RGB signature. That's the fingerprint of walnut, espresso, and sepia ink. Distinctly *not* a blue-black (Dracula, Tokyo Night, One Dark live there) and *not* a neutral charcoal (GitHub Dark).
 
@@ -129,7 +126,7 @@ Until a second variant ships, the current release is just *Stillroom* with no su
 
 | Surface         | File                                  | Notes                                      |
 | --------------- | ------------------------------------- | ------------------------------------------ |
-| VS Code         | `themes/stillroom-color-theme.json`   | Primary surface. Full workbench + syntax.  |
+| VS Code         | `vscode/themes/stillroom-color-theme.json` | Primary surface. Full workbench + syntax. |
 | Zed             | `zed/themes/stillroom.json`           | Tree-sitter syntax map + workbench colors. |
 | Ghostty         | `ghostty/stillroom`                   | ANSI 0–15 palette + cursor/selection.      |
 | Slack (sidebar) | `slack.txt`                           | 8-slot custom theme string.                |

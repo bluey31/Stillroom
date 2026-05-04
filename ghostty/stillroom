@@ -10,7 +10,7 @@
 background = 211e1c
 foreground = d4cec8
 
-cursor-color = c0b490
+cursor-color = b3ab92
 cursor-text  = 211e1c
 
 selection-background = 46413d
@@ -19,8 +19,8 @@ selection-foreground = d4cec8
 # ANSI 0–7
 palette = 0=#12100f
 palette = 1=#c8716a
-palette = 2=#9ec48f
-palette = 3=#c4bd6e
+palette = 2=#9cb37e
+palette = 3=#c1bb7f
 palette = 4=#7d95b3
 palette = 5=#b89aac
 palette = 6=#8ab3ad
@@ -30,7 +30,7 @@ palette = 7=#bcb4b0
 palette = 8=#807b77
 palette = 9=#d08a6e
 palette = 10=#cad2c5
-palette = 11=#c0b490
+palette = 11=#b3ab92
 palette = 12=#9ba8c2
 palette = 13=#b4a5dc
 palette = 14=#8da8a4

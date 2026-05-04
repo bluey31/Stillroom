@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Stillroom — Palette</title>
+<meta name="description" content="Stillroom · Steep — a warm dark theme for VS Code. natural dyes and warm stone, calibrated for code." />
+<link rel="icon" type="image/png" href="assets/icon.png" />
+<link rel="apple-touch-icon" href="assets/icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --crust: #12100f;
+    --mantle: #1a1715;
+    --base: #211e1c;
+    --surf0: #332f2c;
+    --surf1: #46413d;
+    --ovly0: #6d6864;
+    --ovly1: #807b77;
+    --subtxt1: #bcb4b0;
+    --text: #d4cec8;
+
+    --ecru: #b3ab92;
+    --lichen: #c1bb7f;
+    --petal: #b89aac;
+    --woad: #7d95b3;
+    --glaze: #8ba5aa;
+    --eucalyptus: #9cb37e;
+    --ember: #c29070;
+    --madder: #c8716a;
+    --buff: #cec4af;
+    --linen: #c8c1a5;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--base);
+    color: var(--text);
+    font-family: "Lora", Georgia, "Times New Roman", serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    padding: 88px clamp(24px, 6vw, 96px) 96px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--surf0);
+    margin-bottom: 56px;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 2vw, 28px);
+  }
+  .logo {
+    width: clamp(56px, 7vw, 92px);
+    height: clamp(56px, 7vw, 92px);
+    border-radius: 10px;
+    display: block;
+    flex-shrink: 0;
+  }
+  .wordmark {
+    font-family: "Lora", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(56px, 7vw, 92px);
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+    color: var(--text);
+  }
+  .wordmark .dot { color: var(--ecru); }
+  .meta {
+    text-align: right;
+    font-family: "Menlo", "Monaco", "Courier New", monospace;
+    font-size: 11px;
+    line-height: 1.9;
+    color: var(--ovly1);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+  .meta .label { color: var(--ovly0); margin-right: 12px; }
+  .meta .val { color: var(--subtxt1); }
+
+  .lede {
+    font-family: "Lora", Georgia, serif;
+    font-style: italic;
+    font-size: clamp(17px, 1.6vw, 21px);
+    line-height: 1.55;
+    color: var(--subtxt1);
+    max-width: 780px;
+    margin: -24px 0 0;
+    text-wrap: pretty;
+  }
+
+  /* Screenshot */
+  .shot {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--surf0);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.45), 0 4px 12px rgba(0,0,0,0.3);
+    background: var(--mantle);
+    margin-bottom: 18px;
+  }
+  .shot img { display: block; width: 100%; height: auto; }
+  .shot-caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-family: "Menlo", monospace;
+    font-size: 11px;
+    color: var(--ovly1);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+  .shot-caption em {
+    font-family: "Lora", Georgia, serif;
+    font-style: italic;
+    font-size: 16px;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--subtxt1);
+  }
+
+  /* Sections */
+  .section { margin-top: 80px; }
+  .section-head {
+    position: relative;
+    margin-bottom: 36px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--surf0);
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .section-num {
+    font-family: "Menlo", monospace;
+    font-size: 12px;
+    color: var(--ovly0);
+    letter-spacing: 0.2em;
+  }
+  .section-title {
+    font-weight: 500;
+    font-size: clamp(28px, 3.2vw, 36px);
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+  .section-sub {
+    font-style: italic;
+    font-size: 20px;
+    color: var(--ovly1);
+    margin-left: auto;
+  }
+
+  /* Palette tables — click-to-copy */
+  .palette-group-title {
+    font-family: "Lora", Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--subtxt1);
+    margin: 36px 0 12px;
+  }
+  .palette-group-title:first-child { margin-top: 0; }
+  .palette-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--surf0);
+    border-radius: 6px;
+    overflow: hidden;
+    font-family: "Menlo", "Monaco", monospace;
+    font-size: 12px;
+    background: var(--mantle);
+  }
+  .palette-table th {
+    text-align: left;
+    font-weight: 500;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--surf0);
+    color: var(--ovly0);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+  }
+  .palette-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--surf0);
+    vertical-align: middle;
+    color: var(--subtxt1);
+  }
+  .palette-table tbody tr:last-child td { border-bottom: none; }
+  .palette-table tbody tr:hover td { background: rgba(255,255,255,0.02); }
+  .palette-table .sw {
+    display: block;
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    border: 1px solid var(--surf1);
+  }
+  .palette-table .name {
+    font-family: "Lora", Georgia, serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--text);
+  }
+  .palette-table .copyable {
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.15s;
+  }
+  .palette-table .copyable:hover { color: var(--ecru); }
+  .palette-table .cv {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1;
+  }
+  .palette-table .cv .copy-icon {
+    width: 12px;
+    height: 12px;
+    opacity: 0.35;
+    transition: opacity 0.15s;
+    flex-shrink: 0;
+  }
+  .palette-table .copyable:hover .cv .copy-icon { opacity: 1; }
+  .palette-table .copyable.copied .cv::after {
+    content: "copied";
+    position: absolute;
+    inset: -4px -10px;
+    background: var(--surf1);
+    color: var(--eucalyptus);
+    border-radius: 4px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    font-family: "Menlo", monospace;
+  }
+  @media (max-width: 800px) {
+    .palette-table { font-size: 10px; }
+    .palette-table .name { font-size: 14px; }
+    .palette-table th, .palette-table td { padding: 8px 10px; }
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 80px;
+    padding-top: 28px;
+    border-top: 1px solid var(--surf0);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-family: "Menlo", monospace;
+    font-size: 11px;
+    color: var(--ovly0);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .footer em {
+    font-family: "Lora", Georgia, serif;
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 16px;
+    color: var(--subtxt1);
+  }
+</style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="brand">
+      <img class="logo" src="assets/icon.png" alt="Stillroom" />
+      <h1 class="wordmark">Stillroom<span class="dot">.</span></h1>
+    </div>
+    <div class="meta">
+      <div><span class="label">Variant</span><span class="val">Steep</span></div>
+      <div><span class="label">Base</span><span class="val">#211E1C</span></div>
+      <div><span class="label">Hue&nbsp;axis</span><span class="val">H345°</span></div>
+      <div><span class="label">Pigments</span><span class="val">10&nbsp;accents</span></div>
+    </div>
+  </header>
+
+  <p class="lede">A theme inspired by natural dyes and warm stone, calibrated for a grounding developer experience.</p>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">§ 01</span>
+      <h2 class="section-title">Palette</h2>
+    </div>
+
+    <h3 class="palette-group-title">Active dyes</h3>
+    <table class="palette-table" data-palette>
+      <thead>
+        <tr><th></th><th>Name</th><th>Hex</th><th>RGB</th><th>HSL</th></tr>
+      </thead>
+      <tbody>
+        <tr data-name="lichen" data-hex="#c1bb7f"></tr>
+        <tr data-name="ecru" data-hex="#b3ab92"></tr>
+        <tr data-name="petal" data-hex="#b89aac"></tr>
+        <tr data-name="woad" data-hex="#7d95b3"></tr>
+        <tr data-name="glaze" data-hex="#8ba5aa"></tr>
+        <tr data-name="eucalyptus" data-hex="#9cb37e"></tr>
+        <tr data-name="ember" data-hex="#c29070"></tr>
+        <tr data-name="madder" data-hex="#c8716a"></tr>
+        <tr data-name="buff" data-hex="#cec4af"></tr>
+        <tr data-name="linen" data-hex="#c8c1a5"></tr>
+      </tbody>
+    </table>
+
+    <h3 class="palette-group-title">Supporting dyes</h3>
+    <table class="palette-table" data-palette>
+      <thead>
+        <tr><th></th><th>Name</th><th>Hex</th><th>RGB</th><th>HSL</th></tr>
+      </thead>
+      <tbody>
+        <tr data-name="terracotta" data-hex="#d08a6e"></tr>
+        <tr data-name="chalk" data-hex="#cad2c5"></tr>
+        <tr data-name="verdigris" data-hex="#8ab3ad"></tr>
+        <tr data-name="pewter" data-hex="#8da8a4"></tr>
+        <tr data-name="slate" data-hex="#9ba8c2"></tr>
+        <tr data-name="damson" data-hex="#b4a5dc"></tr>
+      </tbody>
+    </table>
+
+    <h3 class="palette-group-title">Neutral ramp · warm papyrus H345°</h3>
+    <table class="palette-table" data-palette>
+      <thead>
+        <tr><th></th><th>Name</th><th>Hex</th><th>RGB</th><th>HSL</th></tr>
+      </thead>
+      <tbody>
+        <tr data-name="crust" data-hex="#12100f"></tr>
+        <tr data-name="mantle" data-hex="#1a1715"></tr>
+        <tr data-name="base" data-hex="#211e1c"></tr>
+        <tr data-name="surf 0" data-hex="#332f2c"></tr>
+        <tr data-name="surf 1" data-hex="#46413d"></tr>
+        <tr data-name="surf 2" data-hex="#595450"></tr>
+        <tr data-name="ovly 0" data-hex="#6d6864"></tr>
+        <tr data-name="ovly 1" data-hex="#807b77"></tr>
+        <tr data-name="ovly 2" data-hex="#948f8b"></tr>
+        <tr data-name="subtxt 0" data-hex="#a89f9b"></tr>
+        <tr data-name="subtxt 1" data-hex="#bcb4b0"></tr>
+        <tr data-name="text" data-hex="#d4cec8"></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">§ 02</span>
+      <h2 class="section-title">Example</h2>
+      <span class="section-sub">test.py &middot; VS Code</span>
+    </div>
+    <figure class="shot">
+      <img src="assets/code.png" alt="Stillroom theme in VS Code — test.py dyebath encoder" />
+    </figure>
+    <div class="shot-caption">
+      <span>Fig. 01</span>
+      <span>VS Code &nbsp;·&nbsp; Stillroom · Steep</span>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span>Stillroom</span>
+    <em>Brendon Warwick</em>
+    <span>v1.0 &nbsp;·&nbsp; May 2026</span>
+  </footer>
+
+<script>
+  function hexToRgb(hex) {
+    const h = hex.replace('#', '');
+    const r = parseInt(h.slice(0, 2), 16);
+    const g = parseInt(h.slice(2, 4), 16);
+    const b = parseInt(h.slice(4, 6), 16);
+    return `rgb(${r}, ${g}, ${b})`;
+  }
+
+  function hexToHsl(hex) {
+    const h = hex.replace('#', '');
+    let r = parseInt(h.slice(0, 2), 16) / 255;
+    let g = parseInt(h.slice(2, 4), 16) / 255;
+    let b = parseInt(h.slice(4, 6), 16) / 255;
+    const max = Math.max(r, g, b), min = Math.min(r, g, b);
+    let hh = 0, s = 0;
+    const l = (max + min) / 2;
+    if (max !== min) {
+      const d = max - min;
+      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+      switch (max) {
+        case r: hh = (g - b) / d + (g < b ? 6 : 0); break;
+        case g: hh = (b - r) / d + 2; break;
+        case b: hh = (r - g) / d + 4; break;
+      }
+      hh /= 6;
+    }
+    return `hsl(${Math.round(hh * 360)}, ${Math.round(s * 100)}%, ${Math.round(l * 100)}%)`;
+  }
+
+  async function copyValue(el) {
+    const value = el.dataset.value;
+    try {
+      await navigator.clipboard.writeText(value);
+      el.classList.add('copied');
+      setTimeout(() => el.classList.remove('copied'), 1200);
+    } catch (e) {
+      console.error('Clipboard write failed', e);
+    }
+  }
+
+  const COPY_ICON = '<svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+
+  document.querySelectorAll('[data-palette] tbody tr').forEach(row => {
+    const name = row.dataset.name;
+    const hex = row.dataset.hex.toLowerCase();
+    const HEX = hex.toUpperCase();
+    const rgb = hexToRgb(hex);
+    const hsl = hexToHsl(hex);
+
+    row.innerHTML = `
+      <td><span class="sw" style="background: ${hex};"></span></td>
+      <td class="name">${name}</td>
+      <td class="copyable" data-value="${HEX}"><span class="cv">${HEX}${COPY_ICON}</span></td>
+      <td class="copyable" data-value="${rgb}"><span class="cv">${rgb}${COPY_ICON}</span></td>
+      <td class="copyable" data-value="${hsl}"><span class="cv">${hsl}${COPY_ICON}</span></td>
+    `;
+  });
+
+  document.querySelectorAll('.copyable').forEach(el => {
+    el.addEventListener('click', () => copyValue(el));
+  });
+</script>
+
+</body>
+</html>
