@@ -1,6 +1,6 @@
 # Stillroom
 
-A theme inspired by natural dyes and warm stone - lichen, woad, madder, damson, eucalyptus, terracotta - calibrated for a grounding developer experience.
+A theme inspired by natural dyes and warm stone. Calibrated for a grounding developer experience.
 
 ![Stillroom theme in VS Code — test.py dyebath encoder](assets/code.png)
 
